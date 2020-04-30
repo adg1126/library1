@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+    <title>Library</title>
+</head>
+<body>
+    <h1>Library</h1>
+    <div id="container">
+        <div id="book">
+            <div>Title<input id="title" type="text"></div>
+            <div>Author<input id="author" type="text"></div>
+            <div>Pages<input id="pages" type="number"></div>
+            <div>Read<input id="status" type="checkbox"></div>
+            <button id="add-book">Add Book</button>
+        </div>
+        <div id="library-container">
+            <div class="select">
+                <select id="filter-books">
+                    <option value="all">All</option>
+                    <option value="read">Read</option>
+                    <option value="unread">Unread</option>
+                </select>
+            </div>
+            <div id="library"><ul id="list"></ul></div>
+        </div>
+    </div>
+    <div id="alert-box">
+        <h2>Fill all input fields</h2>
+        <button id="close" onclick="toggle()">Close</button>
+    </div>
+    <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyDTflVUFIji589BzgBw3SeyD702rkTa2-c",
+          authDomain: "library-42db4.firebaseapp.com",
+          databaseURL: "https://library-42db4.firebaseio.com",
+          projectId: "library-42db4",
+          storageBucket: "library-42db4.appspot.com",
+          messagingSenderId: "979660977271",
+          appId: "1:979660977271:web:f8b53f77dd594fdbee8272",
+          measurementId: "G-77EW6C3SHH"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        // db.settings({ timestampsInSnapshots: true });
+      </script>
+      <script src="script.js"></script>
+</body>
+</html>
