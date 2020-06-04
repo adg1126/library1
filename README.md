@@ -1,1 +1,1 @@
-# library project for The Odin Project curriculum
+library project for The Odin Project curriculum
